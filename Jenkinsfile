@@ -6,7 +6,7 @@ pipeline {
         stage('CLONE GITHUB CODE') {
             steps {
                 echo 'In this stage code will be clone'
-				git branch: 'main', url: 'https://github.com/devopstraininghub/mindcircuit15d.git'
+				git branch: 'main', url: 'https://github.com/pavibn07/Pavi_mindcircuit15d.git'
 				
 				}
         }
@@ -22,7 +22,7 @@ pipeline {
         stage('DEPLOY') {
             steps {
                 echo 'In this stage .war artiface will be deployed on to tomcat '
-				deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://54.91.227.106:8081/')], contextPath: 'devops-app', war: '**/*.war'
+				deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://15.206.88.78:8080/')], contextPath: 'devops-app', war: '**/*.war'
 				
             }
         }		
